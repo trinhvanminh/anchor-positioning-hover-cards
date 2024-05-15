@@ -163,6 +163,7 @@ article {
   position: relative;
 }
 
+/* fantatic hover background with background: linear-gradient and mask: linear-gradient */
 article::before {
   content: "";
   position: absolute;
