@@ -5,15 +5,47 @@
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 :root {
   --bg: hsl(0 0% 2%);
 }
 
+#browser {
+  padding: 4px 8px;
+}
+
+.callout {
+  color: white;
+  padding: 16px 32px;
+  border-radius: 8px;
+  border-color: rgba(48, 55, 65, 0.5);
+}
+
+.callout.info {
+  background-color: rgba(0, 128, 0, 0.722);
+}
+
+.callout.warning {
+  background-color: hsla(36, 100%, 34%, 0.38);
+}
+
+a:visited {
+  color: currentColor;
+}
+
+.container {
+  height: calc(100vh - 60px);
+  display: flex;
+}
+
+/* ======================= */
+
 body {
-  display: grid;
-  place-items: center;
+  font-family: "Geist", arial;
+  font-weight: 100;
   min-height: 100vh;
   background: var(--bg);
 }
@@ -21,11 +53,7 @@ body {
 main {
   width: 60ch;
   max-width: 100%;
-}
-
-body {
-  font-family: "Geist", arial;
-  font-weight: 100;
+  margin: auto;
 }
 
 ul {

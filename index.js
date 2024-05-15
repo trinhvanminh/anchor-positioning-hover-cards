@@ -1,5 +1,17 @@
 console.clear();
-if (!CSS.supports("anchor-name: --anchor")) {
+const isAnchorSupport = CSS.supports("anchor-name: --anchor");
+
+const support =
+  '<div class="callout info"><p>This broswer supports <a href="https://developer.chrome.com/blog/anchor-positioning-api">anchor positioning</a></p></div>';
+
+const notSupport =
+  '<div class="callout warning"><p>This broswer doesn\'t support <a href="https://developer.chrome.com/blog/anchor-positioning-api">anchor positioning</a></p></div>';
+
+const broswerElm = document.getElementById("browser");
+
+broswerElm.innerHTML = isAnchorSupport ? support : notSupport;
+
+if (!isAnchorSupport) {
   /**
    * Run an event listener on the list.
    * Set the bounding properties based on closest element
