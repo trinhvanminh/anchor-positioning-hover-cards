@@ -5,7 +5,7 @@ const support =
   '<div class="callout info"><p>This broswer supports <a href="https://developer.chrome.com/blog/anchor-positioning-api" target=_blank>anchor positioning</a></p></div>';
 
 const notSupport =
-  '<div class="callout warning"><p>This broswer doesn\'t support <a href="https://developer.chrome.com/blog/anchor-positioning-api" target=_blank>anchor positioning</a></p></div>';
+  '<div class="callout warning"><p>This broswer doesn\'t support <a href="https://developer.chrome.com/blog/anchor-positioning-api" target=_blank>anchor positioning</a>. But don\'t worry, we have JS to demonstrate 😉</p></div>';
 
 const broswerElm = document.getElementById("browser");
 
@@ -34,10 +34,7 @@ if (!isAnchorSupport) {
   };
 
   const update = ({ x, y }) => {
-    const article = document
-      .elementFromPoint(x, y)
-      .closest("li")
-      .querySelector("article");
+    const article = document.elementFromPoint(x, y).closest("li").querySelector("article");
 
     if (article !== current) {
       current = article;
