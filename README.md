@@ -208,3 +208,4 @@ div {
 - **Linear-gradient**: Hướng góc `-35deg` tô màu `black` từ `starting point` 0% tới 45% và sau đó là màu transparent (xem linear gradient angle bên trên)
 
 - **mask**: hiển thị theo màu (linear-gradient) hoặc theo shape của mask (img) do đó nó sẽ hiển thị phần có màu đen
+  > the alpha channel of the mask image will be multiplied with the alpha channel of the element. This can be controlled with the [mask-mode](https://developer.mozilla.org/en-US/docs/Web/CSS/mask-mode) property.
