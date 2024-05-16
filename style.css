@@ -32,7 +32,8 @@
   background-color: hsla(36, 100%, 34%, 0.38);
 }
 
-a, a:visited {
+a,
+a:visited {
   color: currentColor;
 }
 
@@ -76,8 +77,8 @@ ul::after {
   background: hsl(0 0% 10%);
   pointer-events: none;
   z-index: -2;
-  inset: calc(var(--top) * 1px) calc(100% - (var(--right) * 1px))
-    calc(100% - (var(--bottom) * 1px)) calc(var(--left) * 1px);
+  inset: calc(var(--top) * 1px) calc(100% - (var(--right) * 1px)) calc(100% - (var(--bottom) * 1px))
+    calc(var(--left) * 1px);
   transition: inset 0.2s;
 }
 
