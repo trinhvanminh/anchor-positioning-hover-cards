@@ -214,3 +214,4 @@ div {
 ### Liên quan
 
 [background size, background position](./more-about-background.html)
+![text](./assets/images/beautiful-background-effect.gif)
