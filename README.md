@@ -174,8 +174,8 @@ div {
 ```css
 div {
   /* create a horizontal line to 180deg from 0px to 2px and spaces between two line from 2px to 38px and then similar to vertical line to 90deg */
-  background-image: linear-gradient(black 0 2px, transparent 2px 38px),
-    linear-gradient(90deg, black 0 2px, transparent 2px 38px);
+  background-image: linear-gradient(black 0 2px, transparent 2px 38px), linear-gradient(90deg, black 0 2px, transparent
+        2px 38px);
   /* x y => adjust position of "song sắt" to make it look center */
   background-position: -20px -20px, -20px -20px;
   /* width height => adjust dimension of background each line and spaces and then repeat with background-repeat: repeat (default) */
@@ -187,8 +187,7 @@ div {
 
 ```css
 div {
-  background: linear-gradient(black 0 2px, transparent 2px 38px) -20px -20px /
-      40px 40px, linear-gradient(
+  background: linear-gradient(black 0 2px, transparent 2px 38px) -20px -20px / 40px 40px, linear-gradient(
         90deg,
         black 0 2px,
         transparent 2px 38px
@@ -215,3 +214,6 @@ div {
 
 [background size, background position](./more-about-background.html)
 ![text](./assets/images/beautiful-background-effect.gif)
+
+[border with linear-gradient](./border-with-linear-gradient-color.html)
+![text](./assets/images/border-with-linear-gradient-color.png)

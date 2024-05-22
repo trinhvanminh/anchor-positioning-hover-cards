@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --border-radius: 8px;
+        --border-width: 4px;
+        --border-color-linear-gradient: linear-gradient(
+          to right,
+          rgb(0, 120, 212),
+          rgb(0, 120, 212),
+          rgb(169, 211, 242),
+          rgb(218, 126, 208)
+        );
+        --border-transition-time: 1s;
+      }
+
+      main {
+        display: grid;
+        place-items: center;
+      }
+
+      .box {
+        border-radius: var(--border-radius);
+        position: relative;
+        width: 400px;
+        height: 200px;
+      }
+
+      .box::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+
+        border-radius: var(--border-radius);
+        background-image: var(--border-color-linear-gradient);
+        opacity: 0;
+      }
+
+      .box:hover::before {
+        opacity: 0.9;
+        transition: opacity var(--border-transition-time);
+      }
+
+      .box:hover .content {
+        border: var(--border-width) solid transparent;
+        transition: border var(--border-transition-time) ease-out;
+      }
+
+      .content {
+        border-radius: var(--border-radius);
+        border: var(--border-width) solid #ccc;
+
+        /* for stacking context with before */
+        position: relative;
+
+        /* for white background, clipped from padding-box */
+        background-image: linear-gradient(white, white);
+        background-clip: padding-box;
+
+        height: 100%;
+
+        /* for ui */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 20px;
+      }
+
+      .content > *,
+      .content2 > * {
+        margin: 8px 0;
+      }
+
+      /* ========================== */
+      .box2 {
+        width: 400px;
+        height: 200px;
+        background-image: linear-gradient(white, white), var(--border-color-linear-gradient);
+        background-clip: padding-box, border-box;
+
+        border: 4px solid #ccc;
+        border-radius: 8px;
+        background-origin: border-box;
+
+        padding: 0 20px;
+        margin-top: 20px;
+      }
+
+      .box2:hover {
+        border-color: transparent;
+      }
+
+      .content2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main style="margin: 20px 0">
+      <p></p>
+      <div class="box">
+        <div class="content">
+          <h1>Using <code>before</code> and <code>transition</code> on opacity</h1>
+          <p>Explore our collection of guides and code examples for the Gemini API.</p>
+
+          <button>Read the Cookbook</button>
+        </div>
+      </div>
+      <div class="box2">
+        <div class="content2">
+          <h1>Using <code>background-image</code></h1>
+          <p>Explore our collection of guides and code examples for the Gemini API.</p>
+
+          <button>Read the Cookbook</button>
+        </div>
+      </div>
+    </main>
+
+    <div style="text-align: center">
+      <p style="width: 400px; text-align: justify; padding: 20px; margin: auto">
+        <a
+          href="https://stackoverflow.com/questions/20843803/background-image-gradient-not-animating#:~:text=Background%20images%20are%20not%20animatable,like%20you%20would%20text%20color"
+          target="_blank"
+          >background-image-gradient-not-animating</a
+        >
+        <br />
+        Background images are not animatable. Since gradients in CSS use background images, you cannot use a transition
+        to a new one like you would text color. <br /><br />With that being said, if you only have text in the drop
+        downs, you can do a work around using a pseudo element (:before/:after) and animating its opacity instead.
+
+        <br /><br />
+        background-image
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-image#formal_definition" target="_blank"
+          >animation type</a
+        >: discrete
+      </p>
+    </div>
+  </body>
+</html>
