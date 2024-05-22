@@ -216,4 +216,5 @@ div {
 ![text](./assets/images/beautiful-background-effect.gif)
 
 [border with linear-gradient](./border-with-linear-gradient-color.html)
+
 ![text](./assets/images/border-with-linear-gradient-color.png)
